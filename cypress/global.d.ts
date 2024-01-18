@@ -101,9 +101,19 @@ declare namespace Cypress {
     login(username: string, password: string, loginOptions?: LoginOptions): void;
 
     /**
+     * Register user by using UI
+     */
+    register(firstname: string, lastname: string, username: string, password: string): void;
+
+    /**
      * Logs-in user by using API request
      */
     loginByApi(username: string, password?: string): Chainable<Response>;
+
+    /**
+     * Register user by using API request
+     */
+    registerByApi(firstName: string, lastName: string, username: string, password?: string, confirmPassword?: string): Chainable<Response>;
 
     /**
      * Logs-in user by using Google API request
@@ -144,5 +154,85 @@ declare namespace Cypress {
      * Logs in to AWS Cognito via Amplify Auth API bypassing UI using Cypress Task
      */
     loginByCognitoApi(username: string, password: string): Chainable<any>;
+
+    /**
+     * Get the current username displayed
+     */
+    getDisplayedUsername(): Chainable<JQuery<HTMLElement>>;
+
+    /**
+     * Get the current username displayed
+     */
+    getDisplayedBalance(): Chainable<JQuery<HTMLElement>>;
+
+    /**
+     * Get the current fullname displayed
+     */
+    getDisplayedFullname(): Chainable<JQuery<HTMLElement>>;
+
+    /**
+     * Get the current avatar displayed
+     */
+    getDisplayedAvatar(): Chainable<JQuery<HTMLElementTagNameMap[K]>>;
+
+    /**
+     * Verify if the transaction is correctly displayed
+     */
+    transactionEntryShouldBeDisplayed(id: string, amount: number, senderName?: string, receiverName?: string): Chainable<void>;
+
+    /**
+     * Open transaction details
+     */
+    openTransactionDetails(id: string): Chainable<void>;
+
+    /**
+     * Verify if the transaction details are correctly displayed
+     */
+    transactionDetailsShouldBeDisplayed(transaction: Transaction, sender: User, receiver: User): Chainable<void>;
+
+    /**
+     * Go to settings
+     */
+    goToSettings(): Chainable<void>;
+
+    /**
+     * Go to bank accounts
+     */
+    goToBankAccounts(): Chainable<void>;
+
+    /**
+     * Update user settings
+     */
+    updateUserSettings(firstName: string, lastName: string, email: string, phoneNumber: string): Chainable<void>;
+
+    /**
+     * Verify if the user settings are correctly displayed
+     */
+    userSettingsShouldBeDisplayed(firstName: string, lastName: string, email: string, phoneNumber: string): Chainable<void>;
+
+    /**
+     * Create bank account by API
+     */
+    createBankAccountByApi(accountNumber: string, bankName: string, routingNumber: String): Chainable<Response>;
+
+    /**
+     * Create bank account 
+     */
+    createBankAccount(accountNumber: string, bankName: string, routingNumber: string): Chainable<Response>;
+    
+    /**
+     * Click create bank account button
+     */
+    clickCreateBankAccount(): Chainable<void>;
+
+    /**
+     * Delete bank account
+     */
+    deleteBankAccountEntry(id: string): Chainable<void>;
+
+    /**
+     * Get the displayed bank account entry
+     */
+    getBankAccountEntry(id: string): Chainable<JQuery<HTMLElement>>;
   }
 }

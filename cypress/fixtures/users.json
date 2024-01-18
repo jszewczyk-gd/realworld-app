@@ -6,5 +6,23 @@
   "invaliduser": {
     "username": "invalid_username",
     "password": "invalid_password"
+  },
+  "testuserEmily": {
+    "id": "3iq4yqbRi",
+    "name": "Emily Johns",
+    "username": "Emily_Johns",
+    "password": "s3cret"
+  },
+  "testuserGreta": {
+    "id": "3Z79SMhkt",
+    "name": "Greta Johns",
+    "username": "Greta_Johns",
+    "password": "s3cret"
+  },
+  "testuserMark": {
+    "id": "VoQoGAAQL",
+    "name": "Mark Johns",
+    "username": "Mark_Johns",
+    "password": "s3cret"
   }
 }

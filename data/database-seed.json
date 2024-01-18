@@ -74,6 +74,39 @@
       "balance": 75369,
       "createdAt": "2020-02-11T21:26:46.510Z",
       "modifiedAt": "2020-05-21T15:15:33.944Z"
+    },
+    {
+      "id": "3iq4yqbRi",
+      "uuid": "28f48986-75b4-4632-9139-e093a8e20ccc",
+      "firstName": "Emily",
+      "lastName": "Johns",
+      "username": "Emily_Johns",
+      "password": "$2a$10$UKxT2/Y9guEK9QW0Xs7GKuGCloqC7qCdk0RzXUhlOBjAmBI4IxdGW",
+      "balance": 80200,
+      "createdAt": "2024-01-12T09:37:29.021Z",
+      "modifiedAt": "2024-01-12T09:37:29.021Z"
+    },
+    {
+      "id": "3Z79SMhkt",
+      "uuid": "52270940-9879-450a-afe6-3608952a0403",
+      "firstName": "Greta",
+      "lastName": "Johns",
+      "username": "Greta_Johns",
+      "password": "$2a$10$Ljbh9sj2AXzZlMRKrlozCO11Pxvq5hrIVak06.Uaym65jXy6KWAhS",
+      "balance": 43200,
+      "createdAt": "2024-01-12T09:38:56.218Z",
+      "modifiedAt": "2024-01-12T09:38:56.218Z"
+    },
+    {
+      "id": "VoQoGAAQL",
+      "uuid": "51c076fa-2525-4383-a643-301b39c2167b",
+      "firstName": "Mark",
+      "lastName": "Johns",
+      "username": "Mark_Johns",
+      "password": "$2a$10$Y/H66hQoDuFQ7xFmisaAMOpaVW3L3JKm7gde.eqFu9iiSsvPM8.yK",
+      "balance": 0,
+      "createdAt": "2024-01-16T14:20:50.262Z",
+      "modifiedAt": "2024-01-16T14:20:50.262Z"
     }
   ],
   "contacts": [
@@ -253,6 +286,62 @@
       "isDeleted": false,
       "createdAt": "2019-09-30T14:20:07.043Z",
       "modifiedAt": "2020-05-21T22:40:28.910Z"
+    },
+    {
+      "id": "KI1rbsJTC",
+      "uuid": "c73f3a42-0506-4c44-9253-bcb875cbc655",
+      "userId": "3iq4yqbRi",
+      "bankName": "Ordinary Bank",
+      "accountNumber": "111000222",
+      "routingNumber": "123412341",
+      "isDeleted": false,
+      "createdAt": "2024-01-12T09:38:13.901Z",
+      "modifiedAt": "2024-01-12T09:38:13.901Z"
+    },
+    {
+      "id": "CuPUodqI1",
+      "uuid": "ea732d06-4a85-4edb-b209-9f33b6696ce1",
+      "userId": "3Z79SMhkt",
+      "bankName": "Ordinary Bank",
+      "accountNumber": "111000223",
+      "routingNumber": "999111002",
+      "isDeleted": false,
+      "createdAt": "2024-01-12T09:39:41.255Z",
+      "modifiedAt": "2024-01-12T09:39:41.255Z"
+    },
+
+    {
+      "id": "0CRaGwC0N",
+      "uuid": "c1b6580e-4946-4e16-b1f4-e32b37f5e2b1",
+      "userId": "VoQoGAAQL",
+      "bankName": "Bank 1",
+      "accountNumber": "731897319321",
+      "routingNumber": "213131416",
+      "isDeleted": false,
+      "createdAt": "2024-01-16T14:21:37.824Z",
+      "modifiedAt": "2024-01-16T14:21:37.824Z"
+    },
+    {
+      "id": "llVjNnr7i",
+      "uuid": "ac02fd49-9ffa-4a3c-8f01-f2f341a8cffc",
+      "userId": "VoQoGAAQL",
+      "bankName": "Bank 2",
+      "accountNumber": "899138113813",
+      "routingNumber": "190967591",
+      "isDeleted": false,
+      "createdAt": "2024-01-16T14:21:57.025Z",
+      "modifiedAt": "2024-01-16T14:21:57.025Z"
+    },
+    {
+      "id": "9UMc1PIah",
+      "uuid": "c29d5437-dd30-4ba8-a6b8-0e3d7c30a84e",
+      "userId": "VoQoGAAQL",
+      "bankName": "Bank 3",
+      "accountNumber": "909831113231",
+      "routingNumber": "064894324",
+      "isDeleted": false,
+      "createdAt": "2024-01-16T14:22:12.205Z",
+      "modifiedAt": "2024-01-16T14:22:12.205Z"
     }
   ],
   "transactions": [
@@ -9855,6 +9944,40 @@
       "requestResolvedAt": "",
       "createdAt": "2019-06-27T22:24:04.794Z",
       "modifiedAt": "2020-05-21T04:58:44.494Z"
+    },
+    {
+      "id": "T_5OYWENN",
+      "uuid": "25d8b9dc-2076-49a9-bf84-33c5c67eee30",
+      "amount": 12300,
+      "description": "test payment",
+      "receiverId": "3iq4yqbRi",
+      "senderId": "3Z79SMhkt",
+      "status": "complete",
+      "createdAt": "2024-01-12T09:40:07.327Z",
+      "modifiedAt": "2024-01-12T09:40:07.327Z"
+    },
+    {
+      "id": "fpWHSWpr2",
+      "uuid": "145026ac-e99d-47ff-aa50-3b9ef95a4606",
+      "amount": 32100,
+      "description": "test request",
+      "receiverId": "3iq4yqbRi",
+      "senderId": "3Z79SMhkt",
+      "status": "complete",
+      "requestStatus": "accepted",
+      "createdAt": "2024-01-12T09:40:43.303Z",
+      "modifiedAt": "2024-01-12T09:40:43.303Z"
+    },
+    {
+      "id": "9JbjlYo3_",
+      "uuid": "08505d18-de7e-4113-ab39-f82ba9efad3e",
+      "amount": 11100,
+      "description": "test payment2",
+      "receiverId": "3Z79SMhkt",
+      "senderId": "3iq4yqbRi",
+      "status": "complete",
+      "createdAt": "2024-01-12T09:41:37.750Z",
+      "modifiedAt": "2024-01-12T09:41:37.750Z"
     }
   ],
   "likes": [
@@ -10431,6 +10554,46 @@
       "isRead": false,
       "createdAt": "2019-10-19T20:50:49.292Z",
       "modifiedAt": "2020-05-21T21:00:50.192Z"
+    },
+    {
+      "id": "7yg6lpUVCb",
+      "uuid": "abecc4e7-dd89-416f-9a9b-ba99aa33332a",
+      "userId": "3iq4yqbRi",
+      "transactionId": "T_5OYWENN",
+      "status": "received",
+      "isRead": false,
+      "createdAt": "2024-01-12T09:40:07.352Z",
+      "modifiedAt": "2024-01-12T09:40:07.352Z"
+    },
+    {
+      "id": "VXIXw9YrD3",
+      "uuid": "72f01f0b-8ae2-4dc6-bf33-2ca7b8ed6064",
+      "userId": "3iq4yqbRi",
+      "transactionId": "fpWHSWpr2",
+      "status": "requested",
+      "isRead": false,
+      "createdAt": "2024-01-12T09:40:43.310Z",
+      "modifiedAt": "2024-01-12T09:40:43.310Z"
+    },
+    {
+      "id": "3VfDhCTOE",
+      "uuid": "0a884e40-828b-468f-b424-082ae669be5e",
+      "userId": "3Z79SMhkt",
+      "transactionId": "fpWHSWpr2",
+      "status": "received",
+      "isRead": false,
+      "createdAt": "2024-01-12T09:41:07.384Z",
+      "modifiedAt": "2024-01-12T09:41:07.384Z"
+    },
+    {
+      "id": "Waa8-AagBw",
+      "uuid": "e4866569-e22d-4cb5-82cd-35f70d31f6e2",
+      "userId": "3Z79SMhkt",
+      "transactionId": "9JbjlYo3_",
+      "status": "received",
+      "isRead": false,
+      "createdAt": "2024-01-12T09:41:37.770Z",
+      "modifiedAt": "2024-01-12T09:41:37.770Z"
     }
   ],
   "banktransfers": [
@@ -10983,6 +11146,16 @@
       "transactionId": "jtdpSmWcsJxk",
       "createdAt": "2019-10-10T05:09:20.517Z",
       "modifiedAt": "2020-05-21T12:24:00.749Z"
+    },
+    {
+      "id": "jZqa9dGP_c",
+      "uuid": "3f3df28c-0921-4d33-bbcf-cf476221e467",
+      "userId": "3Z79SMhkt",
+      "amount": 12300,
+      "transactionId": "T_5OYWENN",
+      "type": "withdrawal",
+      "createdAt": "2024-01-12T09:40:07.335Z",
+      "modifiedAt": "2024-01-12T09:40:07.335Z"
     }
   ]
 }

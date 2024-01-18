@@ -12,6 +12,11 @@ import "@percy/cypress";
 import "./auth-provider-commands/auth0";
 import "./auth-provider-commands/okta";
 
+import "./commands/user-navbar";
+import "./commands/transactions";
+import "./commands/settings";
+import "./commands/bank-accounts";
+
 // custom command to make taking snapshots with full name
 // formed from the test title + suffix easier
 // cy.visualSnapshot() // default full test title
@@ -85,10 +90,65 @@ Cypress.Commands.add("login", (username, password, { rememberUser = false } = {}
   });
 });
 
+Cypress.Commands.add("register", (firstname, lastname, username, password) => {
+  const signupPath = "/signup";
+  const log = Cypress.log({
+    name: "register",
+    displayName: "REGISTER",
+    message: [`🔐 Creating | ${username}`],
+    // @ts-ignore
+    autoEnd: false,
+  });
+
+  cy.intercept("POST", "/users").as("newUser");
+
+  cy.location("pathname", { log: false }).then((currentPath) => {
+    if (currentPath !== signupPath) {
+      cy.visit(signupPath);
+    }
+  });
+
+  log.snapshot("before");
+
+  cy.getBySel("signup-first-name").type(firstname);
+  cy.getBySel("signup-last-name").type(lastname);
+  cy.getBySel("signup-username").type(username);
+  cy.getBySel("signup-password").type(password);
+  cy.getBySel("signup-confirmPassword").type(password);
+
+  cy.getBySel("signup-submit").click();
+  cy.wait("@newUser").then((newUser: any) => {
+    log.set({
+      consoleProps() {
+        return {
+          firstname, 
+          lastname,
+          username,
+          password,
+          userId: newUser.response.statusCode !== 401 && newUser.response.body.user.id,
+        };
+      },
+    });
+
+    log.snapshot("after");
+    log.end();
+  });
+});
+
 Cypress.Commands.add("loginByApi", (username, password = Cypress.env("defaultPassword")) => {
   return cy.request("POST", `${Cypress.env("apiUrl")}/login`, {
     username,
     password,
+  });
+});
+
+Cypress.Commands.add("registerByApi", (firstName, lastName, username, password = Cypress.env("defaultPassword"), confirmPassword = Cypress.env("defaultPassword")) => {
+  return cy.request("POST", `${Cypress.env("apiUrl")}/users`, {
+    firstName,
+    lastName,
+    username,
+    password,
+    confirmPassword
   });
 });
 
@@ -362,4 +422,37 @@ Cypress.Commands.add("loginByGoogleApi", () => {
       cy.visit("/");
     });
   });
+});
+
+Cypress.Commands.add("createBankAccountByApi", (accountNumber, bankName, routingNumber) => {
+  return cy.request({
+    method: "POST", 
+    url: `${Cypress.env("apiUrl")}/graphql`, 
+    body: {
+      operationName: "CreateBankAccount",
+      query: `
+      mutation CreateBankAccount($bankName: String!, $accountNumber: String!, $routingNumber: String!) {
+        createBankAccount(
+          bankName: $bankName
+          accountNumber: $accountNumber
+          routingNumber: $routingNumber
+        ) {
+          id
+          uuid
+          userId
+          bankName
+          accountNumber
+          routingNumber
+          isDeleted
+          createdAt
+        }
+      }
+      `,
+      variables: {
+        accountNumber,
+        bankName,
+        routingNumber,
+      }
+  }
+});
 });
